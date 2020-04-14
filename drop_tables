@@ -1,0 +1,17 @@
+DROP TABLE Material_doda_dodavatel;
+DROP TABLE Nabytok_mozne_vyrobit_z_materialu;
+DROP TABLE Kus_vyrobeny_z_materialu;
+DROP TABLE Nabytok_ma_prislusenstvo;
+DROP TABLE Kus_ma_prislusenstvo;
+DROP TABLE Material;
+DROP TABLE Dodavatel;
+DROP TABLE Kus_ma_farbu;
+DROP TABLE Prislusenstvo;
+DROP TABLE Nabytok_ma_farbu;
+DROP TABLE Kus;
+DROP TABLE Nabytok;
+DROP TABLE Farba;
+DROP TABLE Zamestnanec_pracuje_na_zakazke;
+DROP TABLE Zakazka;
+DROP TABLE Zakaznik;
+DROP TABLE Zamestnanec;
