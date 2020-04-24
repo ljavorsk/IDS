@@ -1,6 +1,6 @@
 DROP MATERIALIZED VIEW prehlad_zakaziek_podla_datumu_vytvorenia;
 DROP INDEX farba_index;
-DROP PROCEDURE zakaznik_nesparvny_email;
+DROP PROCEDURE zakaznik_nespravny_email;
 DROP TRIGGER login_update_zakazka;
 DROP TRIGGER generate_poradove_cislo;
 DROP TABLE Material_doda_dodavatel;
@@ -325,7 +325,7 @@ INSERT INTO Zakaznik VALUES('test_uziv','Marek','Padly','Testova 42, Zvolen', '+
 
 ---------------------------------------------------  Procedury  --------------------------------------------------
 
-CREATE OR REPLACE PROCEDURE zakaznik_nesparvny_email AS
+CREATE OR REPLACE PROCEDURE zakaznik_nespravny_email AS
   CURSOR zakaznici IS SELECT * FROM Zakaznik;
   pocet_nespravnych INTEGER;
   zak zakaznici%ROWTYPE;
@@ -353,7 +353,7 @@ CREATE OR REPLACE PROCEDURE zakaznik_nesparvny_email AS
   END;
 /
 
-BEGIN zakaznik_nesparvny_email(); END;
+BEGIN zakaznik_nespravny_email(); END;
 
 SELECT RC,meno,priezvisko FROM Zamestnanec;
 
@@ -411,7 +411,7 @@ ORDER BY count(nazov_farby) desc;
 SELECT * FROM TABLE(dbms_xplan.display());
 
 
------------------------------------------------  Pristupova prava pre xondri08  ----------------------------------------------------
+-----------------------------------------------  Pristupove prava pre xondri08  ----------------------------------------------------
 
 GRANT ALL ON Dodavatel TO xondri08;
 GRANT ALL ON Farba TO xondri08;
@@ -431,7 +431,7 @@ GRANT ALL ON Zakaznik TO xondri08;
 GRANT ALL ON Zamestnanec TO xondri08;
 GRANT ALL ON Zamestnanec_pracuje_na_zakazke TO xondri08;
 
-GRANT EXECUTE ON zakaznik_nesparvny_email TO xondri08;
+GRANT EXECUTE ON zakaznik_nespravny_email TO xondri08;
 GRANT EXECUTE ON zmazat_zamestnanca TO xondri08;
 
 
