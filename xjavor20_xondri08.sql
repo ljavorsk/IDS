@@ -1,4 +1,5 @@
 DROP MATERIALIZED VIEW prehlad_zakaziek_podla_datumu_vytvorenia;
+DROP PROCEDURE zmazat_zamestnanca;
 DROP INDEX farba_index;
 DROP PROCEDURE zakaznik_nespravny_email;
 DROP TRIGGER login_update_zakazka;
